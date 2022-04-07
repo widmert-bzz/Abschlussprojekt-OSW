@@ -61,13 +61,13 @@
     <Compile Include="Assets\PlayerFollow.cs" />
     <Compile Include="Assets\Mainmenu\Mainmenu.cs" />
     <Compile Include="Assets\Healthbar.cs" />
+    <Compile Include="Assets\SettingsMenu.cs" />
     <Compile Include="Assets\PlayerDamage.cs" />
     <Compile Include="Assets\MineExplode.cs" />
     <Compile Include="Assets\Bullet.cs" />
     <Compile Include="Assets\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Damage.cs" />
     <Compile Include="Assets\Mines.cs" />
-    <Compile Include="Assets\SettingsMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

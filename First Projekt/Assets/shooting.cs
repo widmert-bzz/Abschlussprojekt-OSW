@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+
+    public Text munitionCount;
 
     public float ReloadTime = 3f;
     public float MagSize = 25f;
@@ -20,6 +23,7 @@ public class shooting : MonoBehaviour
     {
         timer = bulletDelay;
         timerR = 0;
+
 
 
     }
@@ -46,6 +50,13 @@ public class shooting : MonoBehaviour
             timer = bulletDelay;
 
         }
+
+
+        munitionCount.text = (MagSize - counter) + "/" + (MagSize);
+
+
+
+
     }
 
 
