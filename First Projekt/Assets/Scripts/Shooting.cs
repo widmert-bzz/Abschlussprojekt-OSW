@@ -1,14 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
-
     public TextMeshProUGUI munitionCount;
 
     public float reloadTime;
@@ -22,7 +18,6 @@ public class Shooting : MonoBehaviour
     private bool _isReloading;
     private bool _isShooting;
     
-
     private void Start()
     {
         _shootTimer = shootDelay;
