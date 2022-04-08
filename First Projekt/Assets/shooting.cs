@@ -16,14 +16,15 @@ public class shooting : MonoBehaviour
     public float bulletDelay = 1f;
     private float timer = 0.1f;
     private float timerR = 0f;
-    private float counter = 0;
+    private float counter = 0f;
+    private float counter2 = 2f;
     
 
     private void Start()
     {
         timer = bulletDelay;
         timerR = 0;
-
+        counter = MagSize;
 
 
     }
@@ -32,30 +33,42 @@ public class shooting : MonoBehaviour
         timer -= Time.deltaTime;
         timerR -= Time.deltaTime;
 
-        
+        if(timerR < 0)
+        {
+            if (counter2 == 1)
+            {
+                counter = MagSize;
+            }
+        }
+
+
+
         if (Input.GetButton("Fire1") && timer < 0 && timerR < 0)
         {
-            if(counter <= MagSize)
+            counter2++;
+
+
+            if(counter > 0)
             {
                 Shoot();
-                counter++;
+                counter--;
+                timer = bulletDelay;
             }
             else
             {
                 timerR = ReloadTime;
-                counter = 0;
+                counter2 = 0;
+
             }
-            
-            
-            timer = bulletDelay;
+
+
+
+
 
         }
 
 
-        munitionCount.text = (MagSize - counter) + "/" + (MagSize);
-
-
-
+        munitionCount.text = (counter) + "/" + (MagSize);
 
     }
 
