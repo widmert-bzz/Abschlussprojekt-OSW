@@ -14,61 +14,49 @@ public class shooting : MonoBehaviour
     public float MagSize = 25f;
     public float bulletForce = 20f;
     public float bulletDelay = 1f;
-    private float timer = 0.1f;
-    private float timerR = 0f;
-    private float counter = 0f;
+    private float shootDelay = 0.1f;
+    private float reloadTimer = 0f;
+    private float remainingBullets = 0f;
     private float counter2 = 2f;
     
 
     private void Start()
     {
-        timer = bulletDelay;
-        timerR = 0;
-        counter = MagSize;
+        shootDelay = bulletDelay;
+        reloadTimer = 0;
+        remainingBullets = MagSize;
 
 
     }
     void Update()
     {
-        timer -= Time.deltaTime;
-        timerR -= Time.deltaTime;
+        shootDelay -= Time.deltaTime;
+        reloadTimer -= Time.deltaTime;
 
-        if(timerR < 0)
+        if(reloadTimer < 0)
         {
-            if (counter2 == 1)
-            {
-                counter = MagSize;
-            }
+           
         }
 
 
-
-        if (Input.GetButton("Fire1") && timer < 0 && timerR < 0)
+        if (Input.GetButton("Fire1") && shootDelay < 0 && reloadTimer < 0)
         {
             counter2++;
 
-
-            if(counter > 0)
+            if(remainingBullets > 0)
             {
                 Shoot();
-                counter--;
-                timer = bulletDelay;
+                remainingBullets--;
+                shootDelay = bulletDelay;
             }
             else
             {
-                timerR = ReloadTime;
+                reloadTimer = ReloadTime;
                 counter2 = 0;
-
             }
-
-
-
-
-
         }
 
-
-        munitionCount.text = (counter) + "/" + (MagSize);
+        munitionCount.text = (remainingBullets) + "/" + (MagSize);
 
     }
 
