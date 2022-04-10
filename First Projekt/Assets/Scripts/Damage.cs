@@ -9,25 +9,11 @@ public class Damage : MonoBehaviour
     {
         if (collision.gameObject.tag == "bullet")
         {
-
             health -= 10;
             if (health <= 0)
             {
                 Destroy(gameObject);
             }
-            
-
         }
     }
-
-
-
-
-
-
-
-
-
-
-
 }

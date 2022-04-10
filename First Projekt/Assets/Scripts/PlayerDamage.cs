@@ -12,7 +12,7 @@ public class PlayerDamage : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        //healthBar.SetMaxHealth(maxHealth);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
