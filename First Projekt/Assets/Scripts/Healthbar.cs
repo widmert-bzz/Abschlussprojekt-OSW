@@ -16,18 +16,4 @@ public class Healthbar : MonoBehaviour
 
     }
 
-
-    public void Start()
-    {
-       
-    }
-
-
-    public void SetMaxHealth(int health)
-    {
-
-
-    }
-
-
 }
