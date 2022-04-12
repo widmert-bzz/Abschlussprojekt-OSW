@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    
+    public Transform position;
     public GameObject Enemyprefab;
     private float timer = 0f;
-    public float mineCooldown = 10f;
+    public float cooldown = 10f;
 
 
     private void Start()
     {
-        timer = mineCooldown;
+        timer = cooldown;
 
 
     }
@@ -21,16 +21,16 @@ public class Spawner : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer < 0)
         {
-            Shoot();
-            timer = mineCooldown;
+            Spawn();
+            timer = cooldown;
 
         }
     }
 
 
 
-    void Shoot()
+    void Spawn()
     {
-        GameObject Enemy = Instantiate(Enemyprefab);
+        Instantiate(Enemyprefab, position);
     }
 }
