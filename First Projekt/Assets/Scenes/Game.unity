@@ -153,7 +153,7 @@ RectTransform:
   m_LocalScale: {x: 6.6660004, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2072790630}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1563,7 +1563,7 @@ RectTransform:
   m_LocalScale: {x: 6.6660004, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2072790630}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1620,6 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8654c2f2d2d72674e8b4c6d8c699b2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   fill: {fileID: 878885746}
 --- !u!1 &991285120
 GameObject:
@@ -1739,6 +1740,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+=======
+  maxHealth: 100
+  bulletDmg: 10
+  fill: {fileID: 0}
+>>>>>>> 2c3310d268109b81231f7ba6dff9a741afb24e2a
 --- !u!1 &1010067211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,8 +2232,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 878885745}
   - {fileID: 52073771}
+  - {fileID: 878885745}
   m_Father: {fileID: 175723620}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
