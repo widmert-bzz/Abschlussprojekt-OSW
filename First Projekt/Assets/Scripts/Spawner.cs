@@ -31,6 +31,6 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-        Instantiate(Enemyprefab, position);
+        Instantiate(Enemyprefab);
     }
 }
