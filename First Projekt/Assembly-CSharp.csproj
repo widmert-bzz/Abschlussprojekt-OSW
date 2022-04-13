@@ -67,10 +67,10 @@
     <Compile Include="Assets\Scripts\PlayerDamage.cs" />
     <Compile Include="Assets\Scripts\MineExplode.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\DamageDealer.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\Mines.cs" />
-    <Compile Include="Assets\DamageDealer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
