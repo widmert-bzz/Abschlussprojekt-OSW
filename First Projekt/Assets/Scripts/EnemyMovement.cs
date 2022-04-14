@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private bool _isTouchingPlayer;
     public Rigidbody2D rb;
-    public float speed;
+    public float speed = 2f;
     private GameObject player;
 
     private void Start()
