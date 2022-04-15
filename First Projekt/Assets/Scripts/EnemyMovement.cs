@@ -8,39 +8,68 @@ public class EnemyMovement : MonoBehaviour
     public Rigidbody2D rb;
     public float speed = 2f;
     private GameObject player;
+    public Collider2D collider2d;
+    public ContactFilter2D contactFilter;
+    public float pushForce;
+    Vector3 directions;
+    Vector3 enemyToOtherEnemys;
+
 
     private void Start()
     {
         player = GameObject.Find("Player");
     }
-    private void FixedUpdate()
+    private void Update()
     {
+        List<Collider2D> result = new();
+        collider2d.OverlapCollider(contactFilter, result);
 
-        if (_isTouchingPlayer == false)
+        _isTouchingPlayer = false;
+
+
+        if (result.Count > 0)
         {
-            Vector2 playerPos = (Vector2)player.transform.position - rb.position;
+            directions = Vector3.zero;
+
+
+            foreach (var collider in result)
+            {
+                Vector3 direction = (collider.gameObject.transform.position - transform.position).normalized;
+                float weight = 0.88f - Vector3.Distance(collider.gameObject.transform.position, transform.position);
+
+
+                if (collider.gameObject.CompareTag("Player"))
+                {
+                    _isTouchingPlayer = true;
+                }
+
+                directions += direction * weight;
+
+            }
+
+            directions /= result.Count;
+            
+        }
+        else
+        {
+            directions = Vector3.zero;
+        }
+
+        Vector2 playerPos = (Vector2)player.transform.position - rb.position;
+
+        if (!_isTouchingPlayer)
+        {
             rb.rotation = Mathf.Atan2(playerPos.y, playerPos.x) * Mathf.Rad2Deg - 90f;
-            rb.velocity = transform.up * speed;
+            rb.velocity = (transform.up * speed) - (directions * pushForce);
         }
-
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Player")
+        else
         {
-            _isTouchingPlayer = true;
+            rb.velocity = Vector2.zero - (Vector2)(directions * pushForce);
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+
+    private void OnDrawGizmos()
     {
-        if (collision.gameObject.name == "Player")
-        {
-            _isTouchingPlayer = false;
-        }
+        Gizmos.DrawLine(transform.position, transform.position - directions);
     }
-
-
-
-
-
 }

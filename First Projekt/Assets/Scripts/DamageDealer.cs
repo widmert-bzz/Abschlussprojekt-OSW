@@ -54,7 +54,7 @@ public class DamageDealer : MonoBehaviour
         if (attackpoint == null)
             return;
 
-        Gizmos.DrawWireSphere(attackpoint.transform.position, attackRange);
+        //Gizmos.DrawWireSphere(attackpoint.transform.position, attackRange);
     }
 
 }
