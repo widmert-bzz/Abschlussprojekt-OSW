@@ -364,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {fileID: 103519474}
   Enemyprefab: {fileID: 6296445574607499886, guid: 4ecf97e7a235b66439cd95209f046872, type: 3}
-  cooldown: 5
+  cooldown: 0.5
 --- !u!4 &103519474
 Transform:
   m_ObjectHideFlags: 0
@@ -752,7 +752,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c3d899c0000992d4cab63bebf266cd55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
