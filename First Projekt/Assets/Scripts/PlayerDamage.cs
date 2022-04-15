@@ -12,19 +12,28 @@ public class PlayerDamage : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
     }
    
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth, maxHealth);
 
+        if (currentHealth < maxHealth)
+        {
+            Die();
+        }
 
 
     }
+    void Die()
+    {
+        Debug.Log("Player died!");
+    } 
+            
+        
 
 
 

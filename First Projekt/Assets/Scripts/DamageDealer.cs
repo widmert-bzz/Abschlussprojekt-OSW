@@ -5,37 +5,48 @@ using UnityEngine;
 public class DamageDealer : MonoBehaviour
 {
     
-    GameObject child;
     GameObject player;
     GameObject attackpoint;
     public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
+    public int damage = 10;
+    public LayerMask playerLayer;
+    public float attackspeed = 1f;
+    float Timer;
 
     private void Start()
     {
-
-        child = GameObject.Find("Attackpoint");
+        attackpoint = gameObject.transform.Find("AttackPoint").gameObject;
+        Timer = attackspeed;
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Attack();
-        }
-   
+        Timer -= Time.deltaTime;
 
+        DetectPlayer();
     }
 
-    void Attack()
+    void DetectPlayer()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(child.transform.position, attackRange, enemyLayers);
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackpoint.transform.position, attackRange, playerLayer);
 
-       foreach(Collider2D enemy in hitEnemies)
-       {
-            Debug.Log("We hit " + enemy.name);
-       }
+        if(hitPlayers.Length > 0)
+        {
+            Attack(hitPlayers[0].gameObject);
+        }
     }
+
+    void Attack(GameObject player)
+    {
+
+        if (Timer < 0)
+        {
+            player.GetComponent<PlayerDamage>().TakeDamage(damage);
+            Timer = attackspeed;
+        }
+    }
+        
+    
 
 
     void OnDrawGizmosSelected()
@@ -43,7 +54,7 @@ public class DamageDealer : MonoBehaviour
         if (attackpoint == null)
             return;
 
-        Gizmos.DrawWireSphere(child.transform.position, attackRange);
+        Gizmos.DrawWireSphere(attackpoint.transform.position, attackRange);
     }
 
 }

@@ -13080,8 +13080,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df37cb07d74cca4392b7dacdeb79592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  currentHealth: 1000
+  maxHealth: 550
+  currentHealth: 0
   healthBar: {fileID: 878885748}
 --- !u!1 &519420028
 GameObject:
@@ -13558,10 +13558,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4166595920949157194, guid: 4ecf97e7a235b66439cd95209f046872, type: 3}
-      propertyPath: attackRange
-      value: 0.55
-      objectReference: {fileID: 0}
     - target: {fileID: 6296445574607499883, guid: 4ecf97e7a235b66439cd95209f046872, type: 3}
       propertyPath: m_RootOrder
       value: 1
