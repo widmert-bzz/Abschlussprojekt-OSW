@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
 
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     Vector2 mousePos;
     private Vector2 moveDirection;
+
 
     void Update()
     {

@@ -19,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
     {
         player = GameObject.Find("Player");
     }
-    private void Update()
+    private void FixedUpdate()
     {
         List<Collider2D> result = new();
         collider2d.OverlapCollider(contactFilter, result);

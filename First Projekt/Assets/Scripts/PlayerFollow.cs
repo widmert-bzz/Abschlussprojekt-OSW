@@ -5,9 +5,18 @@ using UnityEngine;
 public class PlayerFollow : MonoBehaviour
 {
     public GameObject Player;
+    public float smoothFactor = 1;
+    public Vector3 offset;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z -10);
+        Follow();
     }
+
+    void Follow () 
+    {   
+        Vector3 playerPosition = Player.transform.position + offset;
+        Vector3 smoothPosition = Vector3.Lerp(transform.position, playerPosition, smoothFactor*Time.fixedDeltaTime);
+        transform.position = smoothPosition;
+    } 
 }
