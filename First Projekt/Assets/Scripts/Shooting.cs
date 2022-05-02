@@ -6,11 +6,14 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public TextMeshProUGUI munitionCount;
+    public TextMeshProUGUI munitionLeftCount;
+    public AudioSource shootSound;
 
     public float reloadTime;
     public float magazineSize;
     public float bulletForce;
     public float shootDelay;
+    public float ammoRemaining;
     
     private float _shootTimer;
     private float _reloadTimer;
@@ -23,6 +26,7 @@ public class Shooting : MonoBehaviour
         _shootTimer = shootDelay;
         _reloadTimer = 0;
         _remainingBullets = magazineSize;
+        UpdateRemainingAmmoUI();
     }
 
     private void Update()
@@ -30,13 +34,13 @@ public class Shooting : MonoBehaviour
         if (Input.GetButton("Fire1") && CanShoot())
             Shoot();
         
-        if(_remainingBullets == 0 && !_isReloading)
+        if(_remainingBullets == 0 && !_isReloading && ammoRemaining > 0)
             StartReload();
 
         if (_isReloading)
         {
             _reloadTimer -= Time.deltaTime;
-            print($"is reloading with {_reloadTimer}");
+            print("is reloading with {_reloadTimer}");
         }
         
         if(_isShooting)
@@ -72,16 +76,24 @@ public class Shooting : MonoBehaviour
         _shootTimer = shootDelay;
         _isShooting = true;
         UpdateAmmoUI();
+        shootSound.Play();
     }
 
     private void StartReload()
     {
         _isReloading = true;
         _reloadTimer = reloadTime;
+        ammoRemaining -= 25;
+        UpdateRemainingAmmoUI();
     }
 
     private void UpdateAmmoUI()
     {
         munitionCount.text = $"{_remainingBullets}/{magazineSize}";
+    }
+
+    private void UpdateRemainingAmmoUI()
+    {
+        munitionLeftCount.text = $"{ammoRemaining}";
     }
 }
