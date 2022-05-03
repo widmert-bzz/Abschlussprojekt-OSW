@@ -948,7 +948,8 @@ MonoBehaviour:
   munitionCount: {fileID: 432872483}
   munitionLeftCount: {fileID: 1176087100}
   shootSound: {fileID: 8300000, guid: bed0f1bf3e12b7641a36a35b6d208e01, type: 3}
-  reloadTime: 3
+  reloadSound: {fileID: 8300000, guid: 4f34ba7f52992144dab46a75d398d52b, type: 3}
+  reloadTime: 4
   magazineSize: 25
   bulletForce: 20
   shootDelay: 0.18
