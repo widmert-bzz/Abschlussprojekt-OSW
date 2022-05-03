@@ -7,13 +7,15 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public TextMeshProUGUI munitionCount;
     public TextMeshProUGUI munitionLeftCount;
-    public AudioSource shootSound;
+    public AudioClip shootSound;
+    public AudioClip reloadSound;
 
     public float reloadTime;
     public float magazineSize;
     public float bulletForce;
     public float shootDelay;
     public float ammoRemaining;
+    public float volume = 1f;
     
     private float _shootTimer;
     private float _reloadTimer;
@@ -76,7 +78,7 @@ public class Shooting : MonoBehaviour
         _shootTimer = shootDelay;
         _isShooting = true;
         UpdateAmmoUI();
-        shootSound.Play();
+        AudioSource.PlayClipAtPoint(shootSound, gameObject.transform.position, volume);
     }
 
     private void StartReload()
@@ -84,6 +86,7 @@ public class Shooting : MonoBehaviour
         _isReloading = true;
         _reloadTimer = reloadTime;
         ammoRemaining -= 25;
+        AudioSource.PlayClipAtPoint(reloadSound, gameObject.transform.position, volume);
         UpdateRemainingAmmoUI();
     }
 
@@ -96,4 +99,5 @@ public class Shooting : MonoBehaviour
     {
         munitionLeftCount.text = $"{ammoRemaining}";
     }
+
 }
