@@ -16,13 +16,16 @@ public class Shooting : MonoBehaviour
     public float shootDelay;
     public float ammoRemaining;
     public float volume = 1f;
-    
+
     private float _shootTimer;
     private float _reloadTimer;
     private float _remainingBullets;
+    private float _bulletsToReload;
     private bool _isReloading;
     private bool _isShooting;
-    
+
+
+
     private void Start()
     {
         _shootTimer = shootDelay;
@@ -35,8 +38,8 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetButton("Fire1") && CanShoot())
             Shoot();
-        
-        if(_remainingBullets == 0 && !_isReloading && ammoRemaining > 0)
+
+        if (_remainingBullets == 0 && !_isReloading && ammoRemaining > 0)
             StartReload();
 
         if (_isReloading)
@@ -44,15 +47,15 @@ public class Shooting : MonoBehaviour
             _reloadTimer -= Time.deltaTime;
             print("is reloading with {_reloadTimer}");
         }
-        
-        if(_isShooting)
+
+        if (_isShooting)
             _shootTimer -= Time.deltaTime;
 
         //Reload has ended
         if (_reloadTimer < 0 && _isReloading)
         {
+            _remainingBullets += _bulletsToReload;
             _isReloading = false;
-            _remainingBullets = magazineSize;
             UpdateAmmoUI();
         }
 
@@ -61,6 +64,11 @@ public class Shooting : MonoBehaviour
         {
             _isShooting = false;
             _shootTimer = shootDelay;
+        }
+
+        if (Input.GetKeyDown("r"))
+        {
+            StartReload();
         }
     }
 
@@ -83,12 +91,29 @@ public class Shooting : MonoBehaviour
 
     private void StartReload()
     {
-        _isReloading = true;
-        _reloadTimer = reloadTime;
-        ammoRemaining -= 25;
-        AudioSource.PlayClipAtPoint(reloadSound, gameObject.transform.position, volume);
-        UpdateRemainingAmmoUI();
-    }
+        if (ammoRemaining >= magazineSize - _remainingBullets)
+        {
+            _isReloading = true;
+            _reloadTimer = reloadTime;
+            ammoRemaining -= magazineSize - _remainingBullets;
+            _bulletsToReload = magazineSize - _remainingBullets;
+            AudioSource.PlayClipAtPoint(reloadSound, gameObject.transform.position, volume);
+            UpdateRemainingAmmoUI();
+        }
+        else if (ammoRemaining != 0)
+        {
+            _isReloading = true;
+            _reloadTimer = reloadTime;
+            _bulletsToReload = ammoRemaining;
+            ammoRemaining = 0;
+            AudioSource.PlayClipAtPoint(reloadSound, gameObject.transform.position, volume);
+            UpdateRemainingAmmoUI();
+
+        }
+    }  
+    
+        
+    
 
     private void UpdateAmmoUI()
     {
