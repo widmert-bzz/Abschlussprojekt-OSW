@@ -19,7 +19,7 @@ public class Mines : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        if (Input.GetButton("Fire2") && timer < 0)
+        if (Input.GetKeyDown("e") && timer < 0)
         {
             Shoot();
             timer = mineCooldown;
