@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
             AudioSource.PlayClipAtPoint(walkingSound, gameObject.transform.position, volume);
             timer = walkingDuration;
         }
-
         timer -= Time.deltaTime;
     }
 
