@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
             timer = walkingDuration;
         }
         timer -= Time.deltaTime;
+
     }
 
     void ProcessInputs()
