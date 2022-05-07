@@ -42,6 +42,30 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4490688025786403322, guid: 8a59dece109c2f24a9897cc839ff590e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685411704579238493, guid: 8a59dece109c2f24a9897cc839ff590e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685411704579238493, guid: 8a59dece109c2f24a9897cc839ff590e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685411704579238493, guid: 8a59dece109c2f24a9897cc839ff590e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1594178815
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718192302946463166, guid: 8a59dece109c2f24a9897cc839ff590e, type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718192302946463166, guid: 8a59dece109c2f24a9897cc839ff590e, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8913936810644009547, guid: 8a59dece109c2f24a9897cc839ff590e, type: 3}
       propertyPath: m_RootOrder
       value: 0
