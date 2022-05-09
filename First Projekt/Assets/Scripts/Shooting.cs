@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     public TextMeshProUGUI munitionLeftCount;
     public AudioClip shootSound;
     public AudioClip reloadSound;
+    public ParticleSystem smoke;
 
     public float reloadTime;
     public float magazineSize;
@@ -87,6 +88,7 @@ public class Shooting : MonoBehaviour
         _isShooting = true;
         UpdateAmmoUI();
         AudioSource.PlayClipAtPoint(shootSound, gameObject.transform.position, volume);
+        smoke.Play();
     }
 
     private void StartReload()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     public float health = 20;
-    public ParticleSystem blood;
+    public ParticleSystem bloodParticles;
 
     
     private void OnCollisionEnter2D(Collision2D collision)
@@ -16,13 +16,18 @@ public class Damage : MonoBehaviour
             health -= 10;
             if (health <= 0)
             {
-                Destroy(gameObject);
+                delete();
             }
         }
     }
 
     void CreateParticles()
     {
-        blood.Play();
+        Instantiate(bloodParticles, transform.position, Quaternion.identity);
+    }
+
+    void delete()
+    {
+        Destroy(gameObject);
     }
 }
