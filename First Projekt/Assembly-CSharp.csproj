@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\EssentalObjects.cs" />
+    <Compile Include="Assets\Scorpion.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
@@ -78,7 +79,6 @@
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\Mines.cs" />
-    <Compile Include="Assets\Scorpion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

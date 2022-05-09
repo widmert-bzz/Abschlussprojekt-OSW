@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 21170950}
   - component: {fileID: 21170949}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Scorpion_Claw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 83405811}
   - component: {fileID: 83405810}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Scorpion_Claw (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 117090300}
   - component: {fileID: 117090301}
   - component: {fileID: 117090302}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Scorpion_Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117090298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -385,7 +385,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117090298}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -411,7 +411,7 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -7}
   m_EdgeRadius: 0
   m_Points:
   - {x: -0.8232908, y: 5.9663124}
@@ -435,7 +435,8 @@ GameObject:
   - component: {fileID: 325184134}
   - component: {fileID: 325184135}
   - component: {fileID: 325184136}
-  m_Layer: 0
+  - component: {fileID: 325184137}
+  m_Layer: 9
   m_Name: Scorpion_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +518,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325184133}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -530,6 +531,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!68 &325184137
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325184133}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.043555737, y: 0.5766988}
+  - {x: -1.554606, y: -0.8132138}
+  - {x: -1.3321679, y: -2.5890737}
+  - {x: 0.005646229, y: -3.4149926}
+  - {x: 1.3138545, y: -2.6064048}
+  - {x: 1.523179, y: -0.65521336}
+  - {x: 0.27544212, y: 0.5520048}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &855589695
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,8 +569,8 @@ GameObject:
   - component: {fileID: 855589697}
   - component: {fileID: 855589696}
   - component: {fileID: 855589698}
-  m_Layer: 0
-  m_Name: Scorpion_Body
+  m_Layer: 9
+  m_Name: Scorpion_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -615,8 +643,8 @@ Transform:
   m_Father: {fileID: 2107726355}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &855589698
-BoxCollider2D:
+--- !u!70 &855589698
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -628,19 +656,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.5109034, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 24, y: 24}
-    newSize: {x: 16, y: 16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20.978193, y: 24}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: -4.07}
+  m_Size: {x: 17.12, y: 4.5}
+  m_Direction: 1
 --- !u!1 &1204367847
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,8 +669,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1204367848}
   - component: {fileID: 1204367849}
-  m_Layer: 0
-  m_Name: Scorpion_Body2
+  - component: {fileID: 1204367850}
+  m_Layer: 9
+  m_Name: Scorpion_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,6 +744,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1204367850
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204367847}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1524717938
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1524717940}
   - component: {fileID: 1524717939}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Scorpion_Arm (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28654,7 +28694,7 @@ GameObject:
   - component: {fileID: 2107726355}
   - component: {fileID: 2107726357}
   - component: {fileID: 2107726358}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Scorpion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28692,7 +28732,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107726354}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -28723,6 +28763,7 @@ MonoBehaviour:
   Tail: {fileID: 117090298}
   Tail_rb: {fileID: 117090301}
   Head_rb: {fileID: 325184136}
+  Body_rb: {fileID: 1204367850}
   Tail_offset: {x: 0.5, y: 0}
 --- !u!1 &2125486968
 GameObject:
@@ -28734,7 +28775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2125486970}
   - component: {fileID: 2125486969}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Scorpion_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

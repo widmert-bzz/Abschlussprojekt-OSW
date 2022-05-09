@@ -67,7 +67,7 @@ public class Shooting : MonoBehaviour
             _shootTimer = shootDelay;
         }
 
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("r") && !_isReloading && _remainingBullets < 25)
         {
             StartReload();
         }
