@@ -31,7 +31,7 @@ public class Scorpion : MonoBehaviour
 
         if (isSwinging)
         {
-            if(Tail.transform.position.y < -1)
+            if(Tail.transform.position.y < 4)
             {
                 Tail_rb.velocity = new Vector2(0, 5);
                 isSwinging = false;
@@ -41,7 +41,7 @@ public class Scorpion : MonoBehaviour
 
         if (isReturning)
         {
-            if (Tail.transform.position.y > 20)
+            if (Tail.transform.position.y > 24)
             {
                 Tail_rb.velocity = new Vector2(0, 0);
                 isReturning = false;
