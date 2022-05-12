@@ -49,7 +49,18 @@ public class Scorpion : MonoBehaviour
                 timer = refreshTime;
             }
         }
-        Debug.Log(Tail.transform.position);
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Return");
+        GameObject collisionGameObject = collision.gameObject;
+
+        if (collisionGameObject.name == "Player")
+        {
+            ReturnTail();
+            Debug.Log("Ret");
+        }
 
     }
 
@@ -100,8 +111,15 @@ public class Scorpion : MonoBehaviour
 
     void SwingTail()
     {
-        Tail_rb.velocity = new Vector2( 0, -10);
+        Tail_rb.velocity = new Vector2( 0, -20);
         isSwinging = true;
+    }
+
+    void ReturnTail()
+    {
+        isSwinging = false;
+        isReturning = true;
+        Tail_rb.velocity = new Vector2(0, 5);
     }
 
 }
