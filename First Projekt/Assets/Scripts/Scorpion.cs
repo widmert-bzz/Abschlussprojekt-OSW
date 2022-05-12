@@ -53,16 +53,22 @@ public class Scorpion : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Return");
-        GameObject collisionGameObject = collision.gameObject;
-
-        if (collisionGameObject.name == "Player")
         {
-            ReturnTail();
-            Debug.Log("Ret");
-        }
+            Debug.Log("Return");
+            GameObject collisionGameObject = collision.gameObject;
 
+            if (collisionGameObject.name == "Player")
+            {
+                ReturnTail();
+                Debug.Log("Ret");
+            }
+
+
+
+        }
     }
+
+
 
     private void FixedUpdate()
     {
