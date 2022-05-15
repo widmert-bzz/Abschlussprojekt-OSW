@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98945a85fc732f54c84f681ee4301e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorpion: {fileID: 2107726358}
 --- !u!1 &325184133
 GameObject:
   m_ObjectHideFlags: 0
@@ -28774,8 +28775,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tailspeed: 2
-  refreshTime: 10
-  delay: 2
+  refreshTime: 2
+  delay: 0.3
   Tail: {fileID: 117090298}
   Tail_rb: {fileID: 117090301}
   Head_rb: {fileID: 325184136}

@@ -33,7 +33,6 @@ public class Scorpion : MonoBehaviour
         {
             if(Tail.transform.position.y < 4)
             {
-                Tail_rb.velocity = new Vector2(0, 5);
                 ReturnTail();
             }
         }
@@ -49,18 +48,11 @@ public class Scorpion : MonoBehaviour
                 Debug.Log("Error");
             }
         }
-
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        ReturnTail();
-    }
-
+    
 
     private void FixedUpdate()
     {
-
         if (readyForAim)
         {
             AimWithTail();
@@ -70,16 +62,10 @@ public class Scorpion : MonoBehaviour
             float angle2 = Mathf.Atan2(lookDir2.y, lookDir2.x) * Mathf.Rad2Deg - 90f;
             Body_rb.rotation = angle2;
         }
-
-
         //Head
         Vector2 lookDir = new Vector2(player.transform.position.x, player.transform.position.y) - Head_rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg + 90f;
         Head_rb.rotation = angle;
-
-
-
-
     }
 
     void AimWithTail()
@@ -110,12 +96,11 @@ public class Scorpion : MonoBehaviour
         Debug.Log("Swing");
     }
 
-    void ReturnTail()
+    public void ReturnTail()
     {
         isSwinging = false;
         isReturning = true;
         Tail_rb.velocity = new Vector2(0, 5);
         Debug.Log("Return");
     }
-
 }
