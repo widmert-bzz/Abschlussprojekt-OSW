@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\EssentalObjects.cs" />
+    <Compile Include="Assets\Scripts\Scorpion_tail.cs" />
     <Compile Include="Assets\Scripts\Scorpion.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />

@@ -34,8 +34,7 @@ public class Scorpion : MonoBehaviour
             if(Tail.transform.position.y < 4)
             {
                 Tail_rb.velocity = new Vector2(0, 5);
-                isSwinging = false;
-                isReturning = true;
+                ReturnTail();
             }
         }
 
@@ -47,23 +46,16 @@ public class Scorpion : MonoBehaviour
                 isReturning = false;
                 readyForAim = true;
                 timer = refreshTime;
+                Debug.Log("Error");
             }
         }
 
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        {
-            GameObject collisionGameObject = collision.gameObject;
-
-            if (collisionGameObject.name == "Player")
-            {
-                ReturnTail();
-            }
-        }
+        ReturnTail();
     }
-
-
 
 
     private void FixedUpdate()
@@ -102,8 +94,8 @@ public class Scorpion : MonoBehaviour
         }
         else
         {
-            Tail_rb.velocity = new Vector2(0, 0);
-            if(timer < 0)
+            Tail_rb.velocity = new Vector2(0, 0);         
+            if (timer < 0)
             {
                 readyForAim = false;
                 Invoke("SwingTail", delay);
@@ -115,6 +107,7 @@ public class Scorpion : MonoBehaviour
     {
         Tail_rb.velocity = new Vector2( 0, -20);
         isSwinging = true;
+        Debug.Log("Swing");
     }
 
     void ReturnTail()
@@ -122,6 +115,7 @@ public class Scorpion : MonoBehaviour
         isSwinging = false;
         isReturning = true;
         Tail_rb.velocity = new Vector2(0, 5);
+        Debug.Log("Return");
     }
 
 }
