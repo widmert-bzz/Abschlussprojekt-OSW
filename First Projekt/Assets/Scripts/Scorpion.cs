@@ -14,11 +14,9 @@ public class Scorpion : MonoBehaviour
     public Rigidbody2D Body_rb;
     public Vector2 Tail_offset;
     private GameObject player;
-    private bool isSwinging = false;
-    private bool isReturning = false;
     private bool readyForAim = true;
+    private ScorpionState scorpionState = ScorpionState.Resting;
     
-
     void Start()
     {
         player = GameObject.Find("Player");
@@ -29,7 +27,7 @@ public class Scorpion : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        if (isSwinging)
+        if (scorpionState == ScorpionState.Swinging)
         {
             if(Tail.transform.position.y < 4)
             {
@@ -37,12 +35,12 @@ public class Scorpion : MonoBehaviour
             }
         }
 
-        if (isReturning)
+        if (scorpionState == ScorpionState.Returning)
         {
             if (Tail.transform.position.y > 24)
             {
                 Tail_rb.velocity = new Vector2(0, 0);
-                isReturning = false;
+                scorpionState = ScorpionState.Resting;
                 readyForAim = true;
                 timer = refreshTime;
                 Debug.Log("Error");
@@ -50,7 +48,6 @@ public class Scorpion : MonoBehaviour
         }
     }
     
-
     private void FixedUpdate()
     {
         if (readyForAim)
@@ -92,15 +89,21 @@ public class Scorpion : MonoBehaviour
     void SwingTail()
     {
         Tail_rb.velocity = new Vector2( 0, -20);
-        isSwinging = true;
+        scorpionState = ScorpionState.Swinging;
         Debug.Log("Swing");
     }
 
     public void ReturnTail()
     {
-        isSwinging = false;
-        isReturning = true;
+        scorpionState = ScorpionState.Returning;
         Tail_rb.velocity = new Vector2(0, 5);
         Debug.Log("Return");
     }
+}
+
+enum ScorpionState
+{
+    Swinging,
+    Returning,
+    Resting
 }
