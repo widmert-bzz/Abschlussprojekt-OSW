@@ -43,7 +43,6 @@ public class Scorpion : MonoBehaviour
                 scorpionState = ScorpionState.Resting;
                 readyForAim = true;
                 timer = refreshTime;
-                Debug.Log("Error");
             }
         }
     }
@@ -81,7 +80,6 @@ public class Scorpion : MonoBehaviour
             if (timer < 0)
             {
                 readyForAim = false;
-                Invoke("SwingTail", delay);
             }
         }
     }
@@ -90,14 +88,12 @@ public class Scorpion : MonoBehaviour
     {
         Tail_rb.velocity = new Vector2( 0, -20);
         scorpionState = ScorpionState.Swinging;
-        Debug.Log("Swing");
     }
 
     public void ReturnTail()
     {
         scorpionState = ScorpionState.Returning;
         Tail_rb.velocity = new Vector2(0, 5);
-        Debug.Log("Return");
     }
 }
 

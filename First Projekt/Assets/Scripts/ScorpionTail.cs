@@ -5,9 +5,13 @@ using UnityEngine;
 public class ScorpionTail : MonoBehaviour
 {
     public Scorpion scorpion;
+    public ParticleSystem poison;
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
         scorpion.ReturnTail();
+        poison.Play();
     }
+    
+
 }
