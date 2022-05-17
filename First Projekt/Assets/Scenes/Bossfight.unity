@@ -5942,6 +5942,7 @@ MonoBehaviour:
   armHitPosition: 100
   armRestPosition: 35
   hitDelay: 5
+  lerpSpeed: 1
   rb: {fileID: 1524717942}
 --- !u!50 &1524717942
 Rigidbody2D:
@@ -33978,7 +33979,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125486968}
-  m_LocalRotation: {x: -0, y: -0, z: -0.30261943, w: 0.95311147}
+  m_LocalRotation: {x: 0, y: 0, z: -0.30070576, w: 0.953717}
   m_LocalPosition: {x: 7.85, y: 0.97000027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33986,7 +33987,7 @@ Transform:
   - {fileID: 21170950}
   m_Father: {fileID: 2107726355}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -35.23}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -35}
 --- !u!114 &2125486971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34002,6 +34003,7 @@ MonoBehaviour:
   armHitPosition: 0
   armRestPosition: 35
   hitDelay: 5
+  lerpSpeed: 1
   rb: {fileID: 2125486972}
 --- !u!50 &2125486972
 Rigidbody2D:
