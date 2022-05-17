@@ -5,10 +5,13 @@ using UnityEngine;
 public class Area1 : MonoBehaviour
 {
     public ArmL leftArm;
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        leftArm.Punch();
+        GameObject player = collision.gameObject;
+        if (player.name == "Player")
+        {
+            leftArm.Punch();
+        }
     }
-
-
 }

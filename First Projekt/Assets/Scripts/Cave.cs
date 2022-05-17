@@ -15,7 +15,6 @@ public class Cave : MonoBehaviour
         if (collisionGameObject.name == "Player")
         {
             LoadScene();
-            Debug.Log("Teleporting");
         }
          
     }
