@@ -21,6 +21,7 @@ public class Scorpion : MonoBehaviour
     {
         player = GameObject.Find("Player");
         timer = refreshTime;
+        ReturnTail();
     }
 
     private void Update()
@@ -80,6 +81,7 @@ public class Scorpion : MonoBehaviour
             if (timer < 0)
             {
                 readyForAim = false;
+                SwingTail();
             }
         }
     }
