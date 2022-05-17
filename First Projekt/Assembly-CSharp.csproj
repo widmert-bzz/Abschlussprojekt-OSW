@@ -56,6 +56,8 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Area2.cs" />
+    <Compile Include="Assets\ArmL.cs" />
     <Compile Include="Assets\Scripts\EssentalObjects.cs" />
     <Compile Include="Assets\Scripts\ScorpionTail.cs" />
     <Compile Include="Assets\Scripts\Scorpion.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\BloodParticles.cs" />
     <Compile Include="Assets\Scripts\PlayerFollow.cs" />
+    <Compile Include="Assets\ArmR.cs" />
     <Compile Include="Assets\Scripts\Fireball_Launcher.cs" />
     <Compile Include="Assets\Scripts\Mainmenu.cs" />
     <Compile Include="Assets\Scripts\Healthbar.cs" />
@@ -75,15 +78,12 @@
     <Compile Include="Assets\Scripts\MineExplode.cs" />
     <Compile Include="Assets\Scripts\Fireball.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Area1.cs" />
     <Compile Include="Assets\Scripts\DamageDealer.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\Mines.cs" />
-    <Compile Include="Assets\Area1.cs" />
-    <Compile Include="Assets\Area2.cs" />
-    <Compile Include="Assets\ArmL.cs" />
-    <Compile Include="Assets\ArmR.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
