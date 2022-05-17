@@ -9,4 +9,6 @@ public class Area1 : MonoBehaviour
     {
         leftArm.Punch();
     }
+
+
 }
