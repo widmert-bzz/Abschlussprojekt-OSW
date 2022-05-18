@@ -7,7 +7,7 @@ public class Door : MonoBehaviour
     public Rigidbody2D door;
     public void CloseDoor()
     {
-        door.velocity = new Vector2( 3, 0);
+        door.velocity = new Vector2( 2, 0);
     }
 
     private void Update()
