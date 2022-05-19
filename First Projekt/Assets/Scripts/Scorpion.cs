@@ -22,7 +22,7 @@ public class Scorpion : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        timer = refreshTime;
+        timer = 15;
         ReturnTail();
         currentHealth = maxHealth;
     }
@@ -98,7 +98,7 @@ public class Scorpion : MonoBehaviour
     public void ReturnTail()
     {
         scorpionState = ScorpionState.Returning;
-        Tail_rb.velocity = new Vector2(0, 5);
+        Tail_rb.velocity = new Vector2(0, 10);
     }
 
     public void TakeCoreDamage()
