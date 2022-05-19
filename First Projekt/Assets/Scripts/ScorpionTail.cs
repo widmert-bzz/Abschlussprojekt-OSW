@@ -11,6 +11,11 @@ public class ScorpionTail : MonoBehaviour
     {
         scorpion.ReturnTail();
         poison.Play();
+        GameObject hitObject = collision.gameObject;
+        if (hitObject.name == "Core")
+        {
+            scorpion.TakeCoreDamage();
+        }
     }
     
 
