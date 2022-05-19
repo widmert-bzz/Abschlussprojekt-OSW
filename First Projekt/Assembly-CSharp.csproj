@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\EssentalObjects.cs" />
     <Compile Include="Assets\Scripts\Sensor.cs" />
     <Compile Include="Assets\Scripts\ScorpionTail.cs" />
+    <Compile Include="Assets\Scripts\Core.cs" />
     <Compile Include="Assets\Scripts\Scorpion.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
@@ -87,7 +88,6 @@
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\Mines.cs" />
-    <Compile Include="Assets\Scripts\Core.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

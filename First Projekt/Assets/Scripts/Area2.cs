@@ -11,7 +11,7 @@ public class Area2 : MonoBehaviour
         GameObject player = collision.gameObject;
         if (player.name == "Player")
         {
-            rightArm.Punch();
+            rightArm.Punchdelay();
         } 
     }
 }

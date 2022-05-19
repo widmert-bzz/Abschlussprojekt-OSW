@@ -56,6 +56,11 @@ public class ArmR : MonoBehaviour
             armState = ArmState.Punching;
         }
     }
+
+    public void Punchdelay()
+    {
+        Invoke("Punch", 2);
+    }
     enum ArmState
     {
         Punching,
