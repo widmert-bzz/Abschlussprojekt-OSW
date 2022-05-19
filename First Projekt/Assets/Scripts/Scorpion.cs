@@ -7,6 +7,8 @@ public class Scorpion : MonoBehaviour
     public float tailspeed = 10;
     public float refreshTime = 10;
     public float delay = 0.5f;
+    public float maxHealth = 1000;
+    private float currentHealth;
     private float timer;
     public GameObject Tail;
     public Rigidbody2D Tail_rb;
@@ -22,6 +24,7 @@ public class Scorpion : MonoBehaviour
         player = GameObject.Find("Player");
         timer = 15;
         ReturnTail();
+        currentHealth = maxHealth;
     }
 
     private void Update()
@@ -96,6 +99,13 @@ public class Scorpion : MonoBehaviour
     {
         scorpionState = ScorpionState.Returning;
         Tail_rb.velocity = new Vector2(0, 10);
+    }
+
+    public void TakeCoreDamage()
+    {
+        currentHealth -= 500;
+        if (currentHealth <= 0)
+            Debug.Log("scorpion died");
     }
 }
 
