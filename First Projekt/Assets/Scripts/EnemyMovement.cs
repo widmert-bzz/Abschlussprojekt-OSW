@@ -6,7 +6,8 @@ public class EnemyMovement : MonoBehaviour
 {
     private bool _isTouchingPlayer;
     public Rigidbody2D rb;
-    public float speed = 2f;
+    public float speedinput = 2f;
+    private float speed;
     private GameObject player;
     public Collider2D collider2d;
     public ContactFilter2D contactFilter;
@@ -18,9 +19,20 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player");
+        speed = speedinput;
     }
     private void FixedUpdate()
     {
+        if ( 20 < Vector3.Distance(transform.position, player.transform.position))
+        {
+            speed = 0;
+        }
+        else
+        {
+            speed = speedinput;
+        }
+
+
         List<Collider2D> result = new();
         collider2d.OverlapCollider(contactFilter, result);
 

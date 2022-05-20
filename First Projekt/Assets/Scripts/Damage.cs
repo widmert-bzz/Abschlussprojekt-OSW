@@ -5,6 +5,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     public float health = 20;
+    public GameObject munitionBundle;
     public ParticleSystem bloodParticles;
 
     
@@ -28,6 +29,10 @@ public class Damage : MonoBehaviour
 
     void delete()
     {
+        if (Random.value <= 0.2)
+        {
+            Instantiate(munitionBundle, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

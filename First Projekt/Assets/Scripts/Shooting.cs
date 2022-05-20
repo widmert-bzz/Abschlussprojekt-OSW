@@ -112,10 +112,13 @@ public class Shooting : MonoBehaviour
             UpdateRemainingAmmoUI();
 
         }
-    }  
-    
-        
-    
+    }
+
+    public void AddAmmo()
+    {
+        ammoRemaining += 25;
+        UpdateRemainingAmmoUI();
+    }
 
     private void UpdateAmmoUI()
     {
@@ -126,5 +129,4 @@ public class Shooting : MonoBehaviour
     {
         munitionLeftCount.text = $"{ammoRemaining}";
     }
-
 }

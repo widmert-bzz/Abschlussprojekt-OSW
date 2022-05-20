@@ -342,6 +342,10 @@ PrefabInstance:
       propertyPath: bloodParticles
       value: 
       objectReference: {fileID: 5174245695030666486, guid: 5b61458c320bb4c48bad27b81aab00b9, type: 3}
+    - target: {fileID: 8913936810644009588, guid: 8a59dece109c2f24a9897cc839ff590e, type: 3}
+      propertyPath: munitionBundle
+      value: 
+      objectReference: {fileID: 279613471534779413, guid: 6c926f9d290dc184d82fa883e6be9461, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a59dece109c2f24a9897cc839ff590e, type: 3}
 --- !u!58 &642576797042052190 stripped
