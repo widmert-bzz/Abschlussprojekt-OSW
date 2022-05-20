@@ -20,6 +20,8 @@ public class EnemyMovement : MonoBehaviour
     {
         player = GameObject.Find("Player");
         speed = speedinput;
+
+        contactFilter.useLayerMask = true;
     }
     private void FixedUpdate()
     {

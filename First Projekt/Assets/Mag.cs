@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Mag : MonoBehaviour
 {
-    public Shooting shootingscript;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collisionGameObject = collision.gameObject;
 
         if (collisionGameObject.name == "Player")
         {
-            shootingscript.AddAmmo();
+            Shooting shooting = (Shooting)collisionGameObject.GetComponent<Shooting>();
+            shooting.AddAmmo();
             Destroy(gameObject);
         }
     }
