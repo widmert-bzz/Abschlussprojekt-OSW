@@ -9,12 +9,15 @@ public class ScorpionTail : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        scorpion.ReturnTail();
-        poison.Play();
         GameObject hitObject = collision.gameObject;
-        if (hitObject.name == "Core")
+        if (hitObject.tag != "bulett")
         {
-            scorpion.TakeCoreDamage();
+            scorpion.ReturnTail();
+            poison.Play();
+            if (hitObject.name == "Core")
+            {
+                scorpion.TakeCoreDamage();
+            }
         }
     }
     

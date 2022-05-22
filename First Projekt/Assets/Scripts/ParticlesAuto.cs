@@ -5,13 +5,15 @@ using UnityEngine;
 public class ParticlesAuto : MonoBehaviour
 {
     public ParticleSystem Blood;
+    private float timer;
     void Start()
     {
         Blood.Play();
     }
     private void Update()
     {
-        if (Time.deltaTime > 2)
+        timer -= Time.deltaTime;
+        if (timer > 2)
             Destroy(gameObject);
     }
 

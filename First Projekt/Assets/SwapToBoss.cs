@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Mainmenu : MonoBehaviour
+public class SwapToBoss : MonoBehaviour
 {
-    public void QuitGame()
+    void Start()
     {
-        Debug.Log("Quit");
-        Application.Quit();
+        SceneManager.LoadScene("Bossfight");
     }
-   
+
 }

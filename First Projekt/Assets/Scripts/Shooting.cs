@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class Shooting : MonoBehaviour
 {
@@ -10,18 +12,20 @@ public class Shooting : MonoBehaviour
     public AudioClip shootSound;
     public AudioClip reloadSound;
     public ParticleSystem smoke;
+    public AudioMixer audioMixer;
+
 
     public float reloadTime;
-    public float magazineSize;
+    public int magazineSize;
     public float bulletForce;
     public float shootDelay;
-    public float ammoRemaining;
+    public int ammoRemaining;
     public float volume = 1f;
 
     private float _shootTimer;
     private float _reloadTimer;
-    private float _remainingBullets;
-    private float _bulletsToReload;
+    public int _remainingBullets;
+    private int _bulletsToReload;
     private bool _isReloading;
     private bool _isShooting;
 
@@ -128,4 +132,6 @@ public class Shooting : MonoBehaviour
     {
         munitionLeftCount.text = $"{ammoRemaining}";
     }
+
+
 }
