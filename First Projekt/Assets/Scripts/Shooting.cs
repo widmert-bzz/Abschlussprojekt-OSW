@@ -46,7 +46,6 @@ public class Shooting : MonoBehaviour
         if (_isReloading)
         {
             _reloadTimer -= Time.deltaTime;
-            print("is reloading with {_reloadTimer}");
         }
 
         if (_isShooting)

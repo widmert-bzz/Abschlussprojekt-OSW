@@ -11,6 +11,7 @@ public class Sensor : MonoBehaviour
         if (triggerObject.name == "Player")
         {
             door.CloseDoor();
+            
         }
         
     }

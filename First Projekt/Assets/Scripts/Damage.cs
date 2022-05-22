@@ -29,7 +29,7 @@ public class Damage : MonoBehaviour
 
     void delete()
     {
-        if (Random.value <= 0.2)
+        if (Random.value <= 0.1)
         {
             Instantiate(munitionBundle, transform.position, Quaternion.identity);
         }

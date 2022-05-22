@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public Rigidbody2D door;
+    public GameObject doorObject;
     public void CloseDoor()
     {
         door.velocity = new Vector2( 2, 0);
@@ -12,7 +13,7 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        if (door.transform.position.x > 0)
+        if (door.transform.position.x > doorObject.transform.position.x)
         {
             door.velocity = new Vector2(0, 0);
         }
