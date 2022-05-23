@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Gameobject : MonoBehaviour
 {
     public Rigidbody2D door;
     public GameObject doorObject;

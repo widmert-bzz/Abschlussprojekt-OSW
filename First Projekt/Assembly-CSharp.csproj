@@ -59,12 +59,13 @@
     <Compile Include="Assets\SwapOnStart.cs" />
     <Compile Include="Assets\Scripts\Area2.cs" />
     <Compile Include="Assets\Scripts\ArmL.cs" />
+    <Compile Include="Assets\camSize.cs" />
     <Compile Include="Assets\Scripts\ScorpionTail.cs" />
     <Compile Include="Assets\Scripts\Scorpion.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
-    <Compile Include="Assets\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\Gameobject.cs" />
     <Compile Include="Assets\Scripts\PlayerFollow.cs" />
     <Compile Include="Assets\Scripts\ArmR.cs" />
     <Compile Include="Assets\Scripts\PlayerData.cs" />
@@ -96,7 +97,7 @@
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\Mines.cs" />
-    <Compile Include="Assets\camSize.cs" />
+    <Compile Include="Assets\OpenDoorOnClear.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

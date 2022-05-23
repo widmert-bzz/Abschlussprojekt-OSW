@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sensor : MonoBehaviour
 {
-    public Door door;
+    public Gameobject door;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject triggerObject = collision.gameObject;

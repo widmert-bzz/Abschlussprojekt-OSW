@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     public float pushForce;
     Vector3 directions;
     Vector3 enemyToOtherEnemys;
+    private GameObject door;
 
 
     private void Start()
@@ -22,6 +23,7 @@ public class EnemyMovement : MonoBehaviour
         speed = speedinput;
 
         contactFilter.useLayerMask = true;
+
     }
     private void FixedUpdate()
     {
@@ -86,4 +88,6 @@ public class EnemyMovement : MonoBehaviour
     {
         Gizmos.DrawLine(transform.position, transform.position - directions);
     }
+
+
 }
