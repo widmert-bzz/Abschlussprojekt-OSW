@@ -1,38 +1,35 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class camSize : MonoBehaviour
 {
-    private GameObject camera1;
-    private GameObject camera2;
+    private Camera _camera;
+    private bool _isGettingBigger = false;
+    private float _time = 0;
+
+    [Range(0, 1)]
+    [SerializeField]
+    private float speed;
 
     private void Start()
     {
-        camera1 = GameObject.FindWithTag("MainCamera");
-        camera2 = GameObject.FindWithTag("SecondaryCamera");
-        camera2.SetActive(false);
+        _camera = Camera.main;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject collisionGameObject = collision.gameObject;
-
-        if (collisionGameObject.name == "Player")
-        {
-            SetCamera();
-        }
-
-    }
-
-
-    public void SetCamera()
-    {
-        camera2.SetActive(true);
-        camera1.SetActive(false);
+        if (collision.gameObject.name != "Player") return;
         
+        _isGettingBigger = true;
     }
 
-
-
+    private void Update()
+    {
+        if (!_isGettingBigger) return;
+        
+        _camera.orthographicSize = Mathf.Lerp(6, 12, _time);
+        _time += Time.deltaTime * speed;
+    }
 }
