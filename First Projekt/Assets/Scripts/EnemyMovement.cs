@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
     public float pushForce;
     Vector3 directions;
     Vector3 enemyToOtherEnemys;
-    private GameObject door;
+    
 
 
     private void Start()

@@ -7,18 +7,27 @@ public class PlayerDamage : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public int level;
-
+    public AudioClip hurtSound;
     public Healthbar healthBar;
+    public GameObject Death;
 
     private void Start()
     {
         currentHealth = maxHealth;
     }
 
-    private void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        level = SceneManager.GetActiveScene().buildIndex;
+        GameObject collisionGameObject = collision.gameObject;
+
+        if (collisionGameObject.tag == "Tail")
+        {
+            TakeDamage(30);
+        }
+        else if(collisionGameObject.tag == "Claw")
+        {
+            TakeDamage(20);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -26,8 +35,8 @@ public class PlayerDamage : MonoBehaviour
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth, maxHealth);
-
-        if (currentHealth < maxHealth)
+        AudioSource.PlayClipAtPoint(hurtSound, gameObject.transform.position, 1);
+        if (currentHealth < 0)
         {
             Die();
         }
@@ -35,7 +44,8 @@ public class PlayerDamage : MonoBehaviour
     }
     void Die()
     {
-        Debug.Log("Player died!");
+        Death.SetActive(true);
+
     } 
 
 }

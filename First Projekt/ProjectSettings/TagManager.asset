@@ -9,6 +9,9 @@ TagManager:
   - Scorpion
   - Border
   - SecondaryCamera
+  - Tail
+  - Claw
+  - Win
   layers:
   - Default
   - TransparentFX

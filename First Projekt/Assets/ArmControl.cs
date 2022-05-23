@@ -8,6 +8,7 @@ public class ArmControl : MonoBehaviour
     public float armSpeed = 20f;
     public Rigidbody2D rbR;
     public Rigidbody2D rbL;
+    public AudioClip punch;
     private float timerR = 0;
     private float timerL = 0;
     private ArmStateR armStateR = ArmStateR.RestingR;
@@ -81,15 +82,19 @@ public class ArmControl : MonoBehaviour
         if (timerR < 0 && armStateR != ArmStateR.ReturningR && armStateL != ArmStateL.PunchingL)
         {
             armStateR = ArmStateR.PunchingR;
+           
         }
         
+
     }
     public void PunchL()
     {
         if (timerL < 0 && armStateL != ArmStateL.ReturningL && armStateR != ArmStateR.PunchingR)
         {
             armStateL = ArmStateL.PunchingL;
+         
         }
+        
     }
 
     public void PunchdelayR()

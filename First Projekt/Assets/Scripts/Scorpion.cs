@@ -10,6 +10,7 @@ public class Scorpion : MonoBehaviour
     public float maxHealth = 1000;
     private float currentHealth;
     private float timer;
+    public GameObject scorpion;
     public GameObject Tail;
     public Rigidbody2D Tail_rb;
     public Rigidbody2D Head_rb;
@@ -18,6 +19,7 @@ public class Scorpion : MonoBehaviour
     private GameObject player;
     private bool readyForAim = true;
     private ScorpionState scorpionState = ScorpionState.Resting;
+    public GameObject winTab;
     
     void Start()
     {
@@ -103,9 +105,14 @@ public class Scorpion : MonoBehaviour
 
     public void TakeCoreDamage()
     {
+
         currentHealth -= 500;
         if (currentHealth <= 0)
-            Debug.Log("scorpion died");
+        {
+            winTab.SetActive(true);
+            Time.timeScale = 0f;
+        }
+            
     }
 }
 
