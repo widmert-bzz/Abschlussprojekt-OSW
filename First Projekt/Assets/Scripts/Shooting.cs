@@ -12,7 +12,6 @@ public class Shooting : MonoBehaviour
     public AudioClip shootSound;
     public AudioClip reloadSound;
     public ParticleSystem smoke;
-    public AudioMixer audioMixer;
 
 
     public float reloadTime;

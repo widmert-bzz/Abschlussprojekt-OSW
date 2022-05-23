@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Scorpion
   - Border
+  - SecondaryCamera
   layers:
   - Default
   - TransparentFX

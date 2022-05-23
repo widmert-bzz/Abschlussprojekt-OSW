@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        cam = Camera.main;
+
         ProcessInputs();
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);

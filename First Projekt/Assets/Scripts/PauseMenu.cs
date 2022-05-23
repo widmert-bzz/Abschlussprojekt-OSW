@@ -58,6 +58,11 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quitting game...");
         Application.Quit();
     }
-    
+
+    public void SetVolume(float volume)
+    {
+        AudioListener.volume = volume;
+    }
+
 
 }
