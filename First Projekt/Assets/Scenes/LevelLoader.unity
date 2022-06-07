@@ -1089,10 +1089,10 @@ RectTransform:
   m_Father: {fileID: 175723620}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 787, y: -499.5}
-  m_SizeDelta: {x: 105.5425, y: 32.6319}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -164.09998, y: 41.30005}
+  m_SizeDelta: {x: 107.65015, y: 22.444702}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &432872483
 MonoBehaviour:
@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -0.1473942}
+  m_margin: {x: 0.000000113932884, y: 0.17564403, z: 3.512844, w: -0.1473942}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1205,7 +1205,6 @@ GameObject:
   - component: {fileID: 511830292}
   - component: {fileID: 511830289}
   - component: {fileID: 511830288}
-  - component: {fileID: 511830293}
   - component: {fileID: 511830294}
   m_Layer: 6
   m_Name: Player
@@ -1342,7 +1341,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1329603371}
-  - {fileID: 538646486}
   - {fileID: 946018603}
   - {fileID: 818221197}
   - {fileID: 1102459039}
@@ -1367,21 +1365,6 @@ MonoBehaviour:
   rb: {fileID: 511830287}
   cam: {fileID: 519420031}
   walkingSound: {fileID: 8300000, guid: 7562befd241165b4fa8e52cfc05885cf, type: 3}
---- !u!114 &511830293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511830286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c6898d9230c2e745ac5a282af2ee176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MinePoint: {fileID: 538646486}
-  minePrefab: {fileID: 5415412991619832284, guid: c0790961bf135ac439993cd577e471cd, type: 3}
-  mineCooldown: 3
 --- !u!114 &511830294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1813,37 +1796,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533464847}
   m_CullTransparentMesh: 1
---- !u!1 &538646485
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 538646486}
-  m_Layer: 6
-  m_Name: MinePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &538646486
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538646485}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.015, y: 1.4, z: -3.625467}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 511830291}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &734360736
 GameObject:
   m_ObjectHideFlags: 0
@@ -6692,7 +6644,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 511830291}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 181.118, y: -180.014, z: 0.69599915}
 --- !u!114 &818221198
 MonoBehaviour:
@@ -7247,7 +7199,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 511830291}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &988281878
 GameObject:
@@ -7581,10 +7533,10 @@ RectTransform:
   m_Father: {fileID: 175723620}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 528.7, y: -517.9}
-  m_SizeDelta: {x: 159.0151, y: 44.5353}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -431.3, y: 22.099976}
+  m_SizeDelta: {x: 159.01514, y: 44.53531}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176087100
 MonoBehaviour:
